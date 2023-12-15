@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ body{
+    background-color: #f2f1ed;
+ }
+ /* header */
+ .header{
+    background-color: #f2f1ed;
+    position: sticky;
+    top: 0;
+    width: 100%;
+ }
+
+ /* nav menu */
+ .nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    background-color: #f2f1ed;
+    color: black;
+    
+ }
+
+ .menu a{
+    color: black;
+    display: block;
+    padding: 5%;
+    text-decoration: none;
+    text-align: center;
+ }
+
+ .menu a:hover{
+    background-color: #f2f1ed;
+    color: #8b8b76;
+ }
+
+ .nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+ }
+ /* styling af bruger ikon */
+ .hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+ }
+
+ .hamb-line{
+    background: black;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+ }
+
+ .hamb-line::before,
+ .hamb-line::after{
+    background: black;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+ }
+
+ .hamb-line::before{
+    top: 5px;
+ }
+
+ .hamb-line::after{
+    top: -5px;
+ }
+
+ .side-menu{
+    display: none;
+ }
+/* styling af toggle knap */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hanb-line{
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* -----------------------------Styling af side------------------------------ */
+
+/* styling af overskrift */
+h1{
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* styling af tekst under overskrift */
+.oel-tekst{
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+    text-align: justify;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    
+}
+
+/* styling af grapefrugt container */
+.grapefrugt-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    margin-bottom: 10vh;
+}
+/* styling af grapefrugt billede */
+#grapefrugt-oel{
+width: 100%;
+height: auto;
+}
+
+/* styling af pilsner container */
+.pilsner-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    margin-bottom: 10vh;
+    height: 30vh;
+}
+
+
+/* styling af pilsner billede */
+#pilsner-oel{
+    width: 100%;
+    height: auto;
+    
+}
+
+/* styling af ale container */
+.ale-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    margin-bottom: 10vh;
+    height: 30vh;
+}
+
+/* styling af ale billede */
+#ale-oel{
+    width: 100%;
+    height: auto;
+    
+}
+
+/* styling af brødtekst til øllene */
+.grapefrugt-tekst, .pilsner-tekst, .ale-tekst{
+    text-align: justify;
+}
+
+/* styling af inspiration sektion */
+.inspiration{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.klik-her-knap{
+    border: solid 2px #8b8b76;
+    font-size: 20px;
+    margin-left: 12vh;
+    margin-right: 12vh;
+    margin-top: 1vh;
+}
+
+/* styling af hover funktion til klik her knap */
+.klik-her-knap:hover{
+    background-color: #8b8b76;
+    color: black;
+}
+
+
+
+/* Styling af footer */
+footer {
+    background-color: #8b8b76 !important;
+    text-align: center; /* Centrer tekst inden i footeren */
+    padding: 20px; /* Tilføj lidt polstring for at give plads omkring indholdet */
+}
+
+h5 {
+    font-size: medium;
+}
+
+/* Styling af socials */
+.socials {
+    padding: 5px;
+    color: black;
+    background-color: #8b8b76;
+}
+
+.socials a {
+    font-size: 19px;
+    color: inherit;
+    line-height: 38px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 20px;
+    opacity: 0.8;
+    background-color: #8b8b76;
+}
+
+/* Styling af icornerne, når hoveren er over */
+.bilka:hover,
+.foetex:hover,
+.socials a:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Styling af ul */
+.kontakt ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.kontakt ul li{
+    background-color: #8b8b76;
+}
+h5{
+    background-color: #8b8b76;
+}
+
+.her-købes-vi{
+    background-color: #8b8b76;
+}
+
+footer ul li a:hover {
+    opacity: 1;
+}
+
+/* Jeg laver lidt mellemrum mellem hver sektion */
+
+.her-købes-vi,
+.kontakt,
+.medier {
+    margin-top: 2rem;
+    
+}
+
+/* styling af footer */
+h5{
+    font-size: 20px;
+}
+
+.kontakt ul li{
+    font-size: 20px;
+}
+
+/* styling af billeder i footer */
+.bilka, .foetex{
+    width: 80px;
+}
+
+/* media queries */
+
+/* iphone */
+@media screen and (min-width: 390px){
+    /* styling af overskrift */
+h1{
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* styling af tekst under overskrift */
+.oel-tekst{
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+    text-align: justify;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    
+}
+
+/* styling af grapefrugt container */
+.grapefrugt-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    margin-bottom: 10vh;
+}
+/* styling af grapefrugt billede */
+#grapefrugt-oel{
+width: 100%;
+height: auto;
+}
+
+/* styling af pilsner container */
+.pilsner-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    margin-bottom: 10vh;
+    height: 30vh;
+}
+
+
+/* styling af pilsner billede */
+#pilsner-oel{
+    width: 100%;
+    height: auto;
+    
+}
+
+/* styling af ale container */
+.ale-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    margin-bottom: 10vh;
+    height: 30vh;
+}
+
+/* styling af ale billede */
+#ale-oel{
+    width: 100%;
+    height: auto;
+    
+}
+
+/* styling af brødtekst til øllene */
+.grapefrugt-tekst, .pilsner-tekst, .ale-tekst{
+    text-align: justify;
+}
+
+/* styling af inspiration sektion */
+.inspiration{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.klik-her{
+    border: solid 2px #8b8b76;
+    font-size: 20px;
+    margin-left: 12vh;
+    margin-right: 12vh;
+    margin-top: 1vh;
+}
+
+/* styling af hover funktion til klik her knap */
+.klik-her:hover{
+    background-color: #8b8b76;
+    color: black;
+}
+}
+
+/* ipad air */
+@media screen and (min-width: 820px){
+    /* styling af overskrift og teks under overskrift */
+    h1{
+        font-size: 50px;
+    }
+
+    .oel-tekst{
+        font-size: 20px;
+    }
+
+    /* styling af brødtekst til øllene */
+.grapefrugt-tekst, .pilsner-tekst, .ale-tekst{
+    font-size: 25px;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+/* styling af øl overskrifter */
+h3{
+    margin-left: 2vh;
+    font-size: 30px;
+}
+
+/* styling af mørk ale container */
+.ale-container{
+    margin-top: 35vh;
+    margin-bottom: 40vh;
+}
+
+/* styling af inspirations sektion */
+.inspiration h3{
+    font-size: 38px;
+}
+
+/* styling af klik her boks */
+.klik-her{
+    margin-left: 25vh;
+    margin-right: 25vh;
+    font-size: 35px;
+}
+}
+
+/* ipad vandret og større skærme */
+@media screen and (min-width: 1180px){
+    /* burger ikon og nav bar */
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li{
+        float: left;
+        margin-right: 15px;
+        margin-left: 10px;
+    }
+
+    .menu{
+        float: right;
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu a{
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 27px;
+        margin-right: 2vh;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: #8b8b76;
+    }
+    .hamb{
+        display: none;
+    }
+
+    /* styling af header */
+    .header{
+        height: 100px;
+    }
+
+    /* styling af overskrift og brødtekst under overskrift */
+    h1{
+        font-size: 60px;
+    }
+
+    .oel-tekst{
+        font-size: 20px;
+        margin-left: 30vh;
+        margin-right: 30vh;
+    }
+
+    /* styling er grapefrugt container */
+
+    /* styling af placering af billede og tekst */
+    .grapefrugt-content{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .grapefurgt-overskrift, .grapefrugt-tekst{
+        grid-area: 1/2;
+    }
+
+    .image-content{
+        grid-area: 1/1;
+    }
+
+    /* styling af overskrift og tekst */
+
+    .grapefurgt-overskrift{
+        text-align: start;
+        align-self: start;
+        margin-top: 20%;
+    }
+
+    .grapefrugt-tekst{
+        align-items: center;
+        align-self: center;
+        margin-bottom: 7%;
+        margin-right: 10%;
+    }
+
+    /* styling af pilsner brødtekst */
+
+    /* styling af placering af billede og tekst */
+    .pilsner-content{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .image-content-pilsner{
+        grid-area: 1/2;
+    }
+
+    .pilsner-overskrift, .pilsner-tekst{
+        grid-area: 1/1;
+    }
+
+    /* styling af overskrift og tekst */
+
+    .pilsner-overskrift{
+        justify-self: start;
+    }
+
+    .pilsner-tekst{
+        align-items: center;
+        align-self: center;
+        margin-bottom: 55%;
+        
+    }
+
+    /* styling af mørk ale container */
+    /* styling af placering af billede og tekst */
+    .ale-content{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    .image-content-ale{
+        grid-area: 1/1;
+    }
+
+    .ale-overskrift, .ale-tekst{
+        grid-area: 1/2;
+    }
+
+    /* styling af overksirft og tekst */
+    .ale-tekst{
+        align-items: center;
+        align-self: center;
+        margin-bottom: 1%;
+        margin-right: 10%;
+    }
+
+    .ale-overskrift{
+        text-align: start;
+        align-self: start;
+        margin-top: 25%;
+    }
+    
+    /* styling af inspirations sektion */
+    .inspiration h3{
+        font-size: 30px;
+    }
+
+    .klik-her{
+        font-size: 30px;
+        margin-bottom: 10vh;
+        margin-left: 80vh;
+        margin-right: 80vh;
+    }
+
+
+    /* styling af footer */
+    footer{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /* styling af socials i footer */
+    .socials a{
+        font-size: 30px;
+    }
+
+    /* styling af her købes vi billeder i footer */
+    .bilka, .foetex{
+        height: 60px;
+        width: 60px;
+    }
+
+    
+}
+
+
+
+
+
+
+
