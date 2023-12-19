@@ -529,6 +529,9 @@ h3{
 
     /* styling af mørk ale container */
     /* styling af placering af billede og tekst */
+    .ale-container{
+        margin-bottom: 50vh;
+    }
     .ale-content{
         display: grid;
         grid-template-columns:1fr 1fr;

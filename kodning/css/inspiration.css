@@ -7,6 +7,7 @@
  body{
     background-color: #f2f1ed;
  }
+
  /* header */
  .header{
     background-color: #f2f1ed;
@@ -24,6 +25,7 @@
     overflow: hidden;
     background-color: #f2f1ed;
     color: black;
+    z-index: 1001;
     
  }
 
@@ -33,6 +35,7 @@
     padding: 5%;
     text-decoration: none;
     text-align: center;
+    z-index: 1001;
  }
 
  .menu a:hover{
@@ -100,48 +103,58 @@
     top: 0;
 }
 
-/* ----------------------------------styling af side---------------------- */
+
+/* -------------------------styling af side--------------------- */
 /* styling af overskrift */
 h1{
     text-align: center;
-    font-size: 50px;
-    margin-top: 5vh;
-    
+    margin-bottom: 10%;
 }
 
-/* styling af grøn felt container */
-.traet-af-oel-container{
+/* styling af container */
+
+.traet-af-oel-container {
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
-    height: 50vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 15%
+    gap: 25px;
+    padding: 4em 0;
 }
 
-/* styling af grøn felt indhold */
-.inspirations-content{
-    grid-area: 1/1;
-    align-self: center;
+.inspirations-content {
     text-align: justify;
+    background-repeat: no-repeat;
+    position: relative;
     z-index: 1;
-    margin-left: 2vh;
-    margin-right: 3vh;
+    padding: 2em;
+    background-color: #f2f1ed;
 }
 
-/* styling af inforgraphic */
-.info{
-    display: grid;
-    grid-template-rows: 1fr;
+.inspirations-content::before {
+    content: '';
+    position: absolute;
+    left: 50%; /* Centreret i forhold til forælderen */
+    top: 0;
+    transform: translateX(-50%); /* Flytter halvcirklen til venstre for at centrere den */
+    width: 200%; /* Bredden er dobbelt så stor for at sikre dækning */
+    height: 100%;
+    border-radius: 50%; /* Giver en halvcirkel form */
+    background: #bbbc85; /* Baggrundsfarve for halvcirklen */
+    z-index: -1;
 }
 
+
+/* styling af inforgraphic sektion */
+.info {
+    text-align: center;
+    z-index: 2;
+}
 #info-drink{
     height: auto;
-    width: 80%;
+    width: 50%;
 }
 
+
+/* styling af footer */
 /* Styling af footer */
 footer {
     background-color: #8b8b76 !important;
@@ -229,53 +242,73 @@ h5{
 
 /* media queries */
 
-/* iphone */
 @media screen and (min-width: 390px){
-    /* styling af menupunkter i burger-menu */
-    .menu a{
-        font-size: 30px;
+
+    /* styling af overskrift */
+    h1{
+        margin-left: 20%;
     }
 
-   /* styling af infographic */
-   .info{
-    margin-bottom: 5vh;
-   }
+    /* styling af content plus overksruft og tekst */
 
+    .inspirations-content::before {
+        content: '';
+        position: absolute;
+        left: 0; /* Placerer halvcirklen ved venstre kant (tilpasset til 820px) */
+        top: 0;
+        width: 190%; /* Dobbelt bredden af tekstsektionen for at skabe en fuld cirkel */
+        height: 100%; /* Fuld højde af tekstsektionen */
+        border-radius: 0 100vw 100vw 0;; /* Gør cirklen til en halvcirkel */
+        background: #bbbc85; /* Farven på halvcirklen */
+        z-index: -1;
+    }
+
+    h3{
+        margin-left: 5vh;
+    }
+
+    .inspiration-tekst{
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+
+    /* styling af inforgraphic */
+    .info{
+        margin-bottom: 5vh;
+    }
 }
 
 /* ipad air */
 @media screen and (min-width: 820px){
+    .inspirations-content::before {
+        content: '';
+    position: absolute;
+    left: 0; /* Placerer halvcirklen ved venstre kant (tilpasset til 820px) */
+    top: 0;
+    width: 95%; /* Dobbelt bredden af tekstsektionen for at skabe en fuld cirkel */
+    height: 100%; /* Fuld højde af tekstsektionen */
+    border-radius: 0 100vw 100vw 0;; /* Gør cirklen til en halvcirkel */
+    background: #bbbc85; /* Farven på halvcirklen */
+    z-index: -1;
+    }
+
     /* styling af overskrift */
     h1{
-        font-size: 60px;
+        font-size: 40px;
+        margin-bottom: 2vh;
     }
 
-    /* styling af grøn felt container */
-    .traet-af-oel-container{
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    height: 70vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 45%
-    }
-
-    /* styling af indhold i grøn felt */
+    /* styling af tekst og h3 */
     h3{
         font-size: 30px;
+        margin-left: 10vh;
     }
+
     .inspiration-tekst{
-        font-size: 25px;
-       padding-right: 2.2vh;
+        font-size: 20px;
+        margin-left: 10vh;
+        margin-right: 10vh;
     }
-
-    /* styling af infographic */
-    #info-drink{
-        padding-left: 2vh;
-    }
-
 }
 
 /* ipad vandret og større skærme */
@@ -304,7 +337,7 @@ h5{
         display: block;
         padding: 10px;
         text-decoration: none;
-        font-size: 27px;
+        font-size: 25px;
         margin-right: 2vh;
     }
     .menu a:hover{
@@ -315,48 +348,65 @@ h5{
         display: none;
     }
 
-    /* styling af grøn felt container */
-    .traet-af-oel-container{
-        display: flex;
-        flex-direction: row;
-        background-image: url(../img/groen-felt.webp);
-        height: 40vh;
-        background-position: left;
-        background-repeat: no-repeat;
-        width: 100%;
-        margin-bottom: 10vh;
-        }
-
-        .inspirations-content{
-            background-image: url(../img/groen-felt.webp);
-            background-repeat: no-repeat;
-            background-position: left;
-            height: 100%;
-            width: 100%;
-        }
-
-
-        /* styling af infographic */
-        #info-drink{
-            height: auto;
-            width: 100%;
-        }
-
-        /* styling af indhold i grøn felt */
-    h3{
-        font-size: 30px;
+    /* styling af header */
+    .header{
+        height: 100px;
     }
+    /* styling af h1 */
+    h1{
+        margin-left: 5%;
+        font-size: 50px;
+    }
+
+    /* styling af container */
+    .traet-af-oel-container {
+        grid-template-columns: 1fr 1fr; /* To kolonner */
+        align-items: center;
+        height: 100vh; /* eller enhver anden højde du foretrækker */
+        padding-bottom: 50%;
+    }
+
+    .inspirations-content {
+        grid-column: 1 / 2;
+        position: relative;
+        /* Sørger for at indholdet har tilstrækkelig plads */
+    }
+
+    .inspirations-content::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%; /* Centrerer cirklen vertikalt */
+        transform: translateY(-50%); /* Centrerer cirklen vertikalt */
+        width: 50vw; /* Bredden er 50% af viewport bredden */
+        height: 100vh; /* Gør højden af cirklen til højden af viewport */
+        border-radius: 0 100vw 100vw 0; /* Gør kun venstre side af cirklen halvrund */
+        background: #bbbc85; /* Farven på halvcirklen */
+        z-index: -1;
+    }
+
+
+    /* styling af tekst og h3 */
     .inspiration-tekst{
-        font-size: 20px;
-       padding-right: 5vh;
-
+        margin-left: 3vh;
+        margin-right: 2vh;
+        font-size: 25px;
     }
 
-    .info{
-        height: 50%;
-        width: 100%;
+    h3{
+        margin-left: 3vh;
     }
 
+    /* styling af infprgraphic */
+    #info-drink{
+        height: auto;
+        width: 50%;
+    }
+
+    .info {
+        grid-column: 2 / 3;
+        /* Sørger for at indholdet har tilstrækkelig plads */
+    }
 
     /* styling af footer */
     footer{
